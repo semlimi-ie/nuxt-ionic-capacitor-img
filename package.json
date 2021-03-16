@@ -10,6 +10,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "@ionic/core": "^5.6.0",
+    "@ionic/vue": "^5.6.0",
+    "@ionic/vue-router": "^5.6.0",
+    "@nuxtjs/dotenv": "^1.4.1",
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12"
   },
