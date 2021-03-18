@@ -1,7 +1,10 @@
 ion-toolbar {
     --background: var(--ion-color-primary);
+    /* --background: hotpink; */
 }
 ion-title {
     --color: var(--ion-color-primary-contrast);
-
 }
+ion-back-button{
+    --color: black;
+  }

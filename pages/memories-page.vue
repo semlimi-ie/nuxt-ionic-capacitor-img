@@ -1,21 +1,46 @@
 <template>
-<base-layout page-title='All Memories'>
-<ion-list>
-    <ion-item>A trip to the mountains</ion-item>
-    <ion-item>Surfing the sea side</ion-item>
-    <ion-item>Good eating</ion-item>
-</ion-list>
-</base-layout>
-
+  <base-layout page-title="All Memories">
+    <template v-slot:actions-end>
+      <nuxt-link to='/add-memory-page'>
+        <ion-button>
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+            ></path>
+          </svg>
+        </ion-button>
+      </nuxt-link>
+    </template>
+    <memories-list :allMemories="memories"></memories-list>
+  </base-layout>
 </template>
 
 <script>
-import BaseLayout from '~/components/base/BaseLayout.vue'
+// import BaseLayout from '~/components/base/BaseLayout.vue'
+import MemoriesList from '../components/memories/MemoriesList'
 export default {
-  components: { BaseLayout },}
+  components: {
+    MemoriesList,
+    // BaseLayout
+  },
+  computed: {
+    memories() {
+      // return this.$store.state.memories
+      return this.$store.getters.getMemories
+    },
+  },
+}
 </script>
 
 <style scoped>
 @import '@/assets/styles/core.css';
-
 </style>

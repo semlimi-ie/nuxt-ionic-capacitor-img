@@ -1,19 +1,19 @@
-const baseHref = process.env.BASE_HREF || '/';
+const baseHref = process.env.BASE_HREF || '/'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt-ionic-img',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: '' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: baseHref + 'favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: baseHref + 'favicon.ico' },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -24,18 +24,26 @@ export default {
     '../node_modules/@ionic/core/css/structure.css',
     '../node_modules/@ionic/core/css/typography.css',
     '../node_modules/@ionic/core/css/ionic.bundle.css',
+    '../node_modules/@ionic/core/css/padding.css',
+    '../node_modules/@ionic/core/css/float-elements.css',
+    '../node_modules/@ionic/core/css/text-alignment.css',
+    '../node_modules/@ionic/core/css/text-transformation.css',
+    '../node_modules/@ionic/core/css/flex-utils.css',
+    '../node_modules/@ionic/core/css/display.css',
     '@/assets/styles/core.css',
-    '@/assets/styles/variables.css'
+    '@/assets/styles/variables.css',
   ],
+  tailwindcss: {
+    jit: true,
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '@/plugins/global-components.js',
     { src: '~/plugins/ionic.js', mode: 'client' },
   ],
   generate: {
-    routes: [
-      '/',
-    ],
+    routes: ['/'],
   },
   router: {
     // router with correct public path
@@ -53,12 +61,10 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    '@nuxtjs/dotenv'
-  ],
+  modules: ['@nuxtjs/dotenv'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    extend (config, ctx) { }
-  }
+    extend(config, ctx) {},
+  },
 }

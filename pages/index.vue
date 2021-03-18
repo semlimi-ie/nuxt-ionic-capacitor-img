@@ -8,12 +8,14 @@
       </ion-toolbar>
 
       <ion-toolbar>
-        <nuxt-link to="memories-page">
-          <ion-title> Go To Memories Page </ion-title>
+        <div class="flex justify-center">
+          <nuxt-link to="/ionic-nuxt-app/memories-page">
+            <ion-title> Go To Memories Page </ion-title>
           </nuxt-link>
-        <nuxt-link to="memories-page">
-          <ion-nav> navigate to memories page </ion-nav>
-        </nuxt-link>
+          <nuxt-link to="/memories-page">
+            <ion-nav> Navigate to memories page </ion-nav>
+          </nuxt-link>
+        </div>
       </ion-toolbar>
     </ion-header>
     <Logo />
@@ -31,13 +33,13 @@
 </template>
 
 <script>
-import BaseLayout from '~/components/base/BaseLayout.vue'
+// import BaseLayout from '~/components/base/BaseLayout.vue'
 import Logo from '~/components/Logo.vue'
 
 export default {
   components: {
     Logo,
-    BaseLayout,
+    // BaseLayout,
   },
 }
 </script>
@@ -45,6 +47,6 @@ export default {
 <style scoped>
 @import '@/assets/styles/core.css';
 ion-nav {
-  color: black;
+  color: hotpink;
 }
 </style>
