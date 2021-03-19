@@ -22,7 +22,7 @@ export const state = () => ({
       description: 'It was so yummyyyy!',
     },
   ],
-})
+});
 
 export const getters = {
   getMemories(state) {
@@ -30,4 +30,31 @@ export const getters = {
   },
   getSingleMemory: (state) => (memoryId) =>
     state.memories.find((eachMemory) => eachMemory.id == memoryId),
+};
+
+export const mutations = {
+  ADD_MEMORY(state, memoryData) {
+    const newMemory = {
+      id: new Date().toISOString(),
+      title: memoryData.title,
+      image: memoryData.imageUrl,
+      description: memoryData.description
+    };
+    console.log('memoryData in ADD_MEMORY', memoryData);
+    console.log('newMemory in ADD_MEMORY', newMemory);
+    console.log('state.memories before mutation', state.memories); 
+    state.memories.unshift(newMemory);
+    console.log('mutation triggered');
+    console.log('state.memories after mutation', state.memories);
+  }
+
+};
+
+export const actions = {
+  addMemory({ state, commit }, memoryData) {
+    console.log('memoryData in addMemory actions', memoryData);
+    commit('ADD_MEMORY', memoryData);
+    console.log('state.memories after addMemory action', state.memories)
+  }
+
 }

@@ -5,6 +5,8 @@ import { defineCustomElements as Ionic } from "@ionic/core/loader"; // add a dir
 // import {IonicVue} from '@ionic/vue';
 // import '@ionic/core/css/ionic.bundle.css';
 
+// import {Ionic} from '@ionic/core';
+
 
 Vue.use(Ionic);
 Vue.config.ignoredElements = [
