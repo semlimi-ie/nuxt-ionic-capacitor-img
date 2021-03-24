@@ -99,6 +99,6 @@ export default {
 
 <style scoped>
 .list {
-  height: 100vh;
+  height: 80vh;
 }
 </style>

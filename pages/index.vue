@@ -9,7 +9,8 @@
 
       <ion-toolbar>
         <div class="flex justify-center">
-          <nuxt-link to="/ionic-nuxt-app/memories-page">
+          <!-- <nuxt-link to="/ionic-nuxt-app/memories-page"> -->
+          <nuxt-link to="/memories-page">
             <ion-title> Go To Memories Page </ion-title>
           </nuxt-link>
           <nuxt-link to="/memories-page">

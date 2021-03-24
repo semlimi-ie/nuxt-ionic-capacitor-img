@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Nuxt Memories</string>
+    <string name="title_activity_main">Nuxt Memories</string>
+    <string name="package_name">com.semmiii.nuxtmemories</string>
+    <string name="custom_url_scheme">com.semmiii.nuxtmemories</string>
+</resources>

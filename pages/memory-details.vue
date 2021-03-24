@@ -1,4 +1,5 @@
 <template>
+<!-- <div class="main"> -->
   <base-layout :page-title="chosenMemory ? chosenMemory.title : '...Loading'">
     <h2 v-if="!chosenMemory">
       Couldn't find the info. for the page you're looking for
@@ -11,6 +12,7 @@
     ></memory-overview>
     <!-- <p>{{ $route.query.id }}</p> -->
   </base-layout>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -39,4 +41,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+/* .main {
+  height: 100%;
+} */
+</style>
