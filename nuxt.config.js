@@ -41,6 +41,10 @@ export default {
   plugins: [
     '@/plugins/global-components.js',
     { src: '~/plugins/ionic.js', mode: 'client' },
+    {
+      src: '~/plugins/camera.js',
+      mode: 'client'
+    },
   ],
   generate: {
     routes: ['/'],

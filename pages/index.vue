@@ -19,7 +19,7 @@
         </div>
       </ion-toolbar>
     </ion-header>
-    <Logo />
+    <!-- <Logo />
     <ion-content class="content">
       <ion-card>
         <ion-card-subtitle>Ololo</ion-card-subtitle>
@@ -28,19 +28,31 @@
           <h1>Hololo!</h1>
         </ion-card-content>
       </ion-card>
-    </ion-content>
-    <base-layout />
+    </ion-content> -->
+    <div class="content">
+      <ion-content>
+        <create-memory-form @save-memory="saveMemory"></create-memory-form>
+      </ion-content>
+    </div>
   </ion-page>
 </template>
 
 <script>
 // import BaseLayout from '~/components/base/BaseLayout.vue'
-import Logo from '~/components/Logo.vue'
+// import Logo from '~/components/Logo.vue';
+import CreateMemoryForm from '../components/memories/CreateMemoryForm.vue'
 
 export default {
   components: {
-    Logo,
+    // Logo,
     // BaseLayout,
+    CreateMemoryForm,
+  },
+  methods: {
+    saveMemory(memoryData) {
+      this.$store.dispatch('addMemory', memoryData)
+      this.$router.replace('/memories-page')
+    },
   },
 }
 </script>
@@ -49,5 +61,8 @@ export default {
 @import '@/assets/styles/core.css';
 ion-nav {
   color: hotpink;
+}
+.content {
+  height: 100vh;
 }
 </style>
